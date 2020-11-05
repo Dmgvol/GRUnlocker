@@ -1,4 +1,4 @@
-[![](https://img.shields.io/badge/Jack-Unlocked-green)](https://github.com/Dmgvol/GRUnlocker/) [![](https://img.shields.io/badge/Discord-SRGR-blue)](https://discord.com/invite/eZRz3Q5) 
+[![](https://img.shields.io/badge/Jack-Unlocked-green)](https://github.com/Dmgvol/GRUnlocker/) [![](https://img.shields.io/badge/Discord-GRSR-red)](https://discord.com/invite/eZRz3Q5) 
 
 
 

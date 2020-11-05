@@ -63,6 +63,36 @@ namespace GRUnlocker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] Hundo {
+            get {
+                object obj = ResourceManager.GetObject("Hundo", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Levels {
+            get {
+                object obj = ResourceManager.GetObject("Levels", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Newgame_collectiables {
+            get {
+                object obj = ResourceManager.GetObject("Newgame_collectiables", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] patch {
             get {
                 object obj = ResourceManager.GetObject("patch", resourceCulture);

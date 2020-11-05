@@ -53,6 +53,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Resources\Hundo.sav" />
+    <None Include="Resources\Levels.sav" />
+    <None Include="Resources\Newgame_collectiables.sav" />
     <None Include="Resources\patch.sav" />
   </ItemGroup>
   <ItemGroup>

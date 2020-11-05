@@ -6,8 +6,8 @@
 Ghostrunner - Unlocks collectibles, levels, everything and also a new game with colletibles unlocked.
 
 ### Available options
-- Unlock colletbiles (levels untouched)
-- Unlock levels (colletibles untouched)
+- Unlock collectibles (levels untouched)
+- Unlock levels (collectibles untouched)
 - Unlock everything (overwrites with 100% save)
 - New game with collectibles unlocked (overwrites with a custom new-game save)
 

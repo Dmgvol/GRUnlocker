@@ -21,6 +21,9 @@ Ghostrunner - Unlocks collectibles, levels, everything and also a new game with 
 - Copy GRUnlocker.exe to the save directory and run it from there.
 - It will overwrite the current save.
 
+#### Starting arguments
+You can start the program with the digit of the choice in the args.
+
 ## GR save file location
 ```%LOCALAPPDATA%\Ghostrunner\Saved\SavedGames\<long-number>\Ghostrunner.sav```
 

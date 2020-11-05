@@ -3,7 +3,7 @@
 
 
 # GRUnlocker
-Ghostrunner - Unlocks collectibles, levels, everything and also a new game with colletibles unlocked.
+Ghostrunner - Unlocks collectibles, levels, 100% and has an option to start a new-game with collectibles.
 
 ### Available options
 - Unlock collectibles (levels untouched)

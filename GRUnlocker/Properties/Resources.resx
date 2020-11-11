@@ -118,6 +118,66 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="defaultLevelDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\defaultLevelDetails.sav;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="defaultLevelDetails_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\defaultLevelDetails_2.sav;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="EmptyUnlockedList" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EmptyUnlockedList.sav;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FullUnlockedList" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\patch.sav;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Ghostrunner_lvl1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ghostrunner_lvl1.sav;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Ghostrunner_lvl10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ghostrunner_lvl10.sav;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Ghostrunner_lvl11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ghostrunner_lvl11.sav;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Ghostrunner_lvl12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ghostrunner_lvl12.sav;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Ghostrunner_lvl13" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ghostrunner_lvl13.sav;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Ghostrunner_lvl14" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ghostrunner_lvl14.sav;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Ghostrunner_lvl15" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ghostrunner_lvl15.sav;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Ghostrunner_lvl16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ghostrunner_lvl16.sav;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Ghostrunner_lvl2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ghostrunner_lvl2.sav;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Ghostrunner_lvl3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ghostrunner_lvl3.sav;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Ghostrunner_lvl4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ghostrunner_lvl4.sav;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Ghostrunner_lvl5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ghostrunner_lvl5.sav;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Ghostrunner_lvl6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ghostrunner_lvl6.sav;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Ghostrunner_lvl7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ghostrunner_lvl7.sav;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Ghostrunner_lvl8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ghostrunner_lvl8.sav;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Ghostrunner_lvl9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ghostrunner_lvl9.sav;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="Hundo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Hundo.sav;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -126,8 +186,5 @@
   </data>
   <data name="Newgame_collectiables" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Newgame_collectiables.sav;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="patch" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\patch.sav;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

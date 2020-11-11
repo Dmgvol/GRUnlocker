@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InputHandler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -50,9 +51,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Unlocker.cs" />
+    <Compile Include="ByteUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Resources\defaultLevelDetails.sav" />
+    <None Include="Resources\defaultLevelDetails_2.sav" />
+    <None Include="Resources\EmptyUnlockedList.sav" />
+    <None Include="Resources\Ghostrunner_lvl1.sav" />
+    <None Include="Resources\Ghostrunner_lvl10.sav" />
+    <None Include="Resources\Ghostrunner_lvl11.sav" />
+    <None Include="Resources\Ghostrunner_lvl12.sav" />
+    <None Include="Resources\Ghostrunner_lvl13.sav" />
+    <None Include="Resources\Ghostrunner_lvl14.sav" />
+    <None Include="Resources\Ghostrunner_lvl15.sav" />
+    <None Include="Resources\Ghostrunner_lvl16.sav" />
+    <None Include="Resources\Ghostrunner_lvl2.sav" />
+    <None Include="Resources\Ghostrunner_lvl3.sav" />
+    <None Include="Resources\Ghostrunner_lvl4.sav" />
+    <None Include="Resources\Ghostrunner_lvl5.sav" />
+    <None Include="Resources\Ghostrunner_lvl6.sav" />
+    <None Include="Resources\Ghostrunner_lvl7.sav" />
+    <None Include="Resources\Ghostrunner_lvl8.sav" />
+    <None Include="Resources\Ghostrunner_lvl9.sav" />
     <None Include="Resources\Hundo.sav" />
     <None Include="Resources\Levels.sav" />
     <None Include="Resources\Newgame_collectiables.sav" />

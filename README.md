@@ -3,13 +3,16 @@
 
 
 # GRUnlocker
-Ghostrunner - Unlocks collectibles, levels, 100% and has an option to start a new-game with collectibles.
+Ghostrunner - Unlocks collectibles, levels, 100% and more!
 
 ### Available options
 - Unlock collectibles (levels untouched)
 - Unlock levels (collectibles untouched)
 - Unlock everything (overwrites with 100% save)
+- Unlock up to a specific level (1-16)
 - New game with collectibles unlocked (overwrites with a custom new-game save)
+- Reset deaths & times
+- Reset collectibles
 
 ## Usage
 ##### Option 1
@@ -17,7 +20,7 @@ Ghostrunner - Unlocks collectibles, levels, 100% and has an option to start a ne
 - Run the program and choose one of the given options.
 - Copy back the updated ```.sav``` file to GR save folder.
 
-##### Option 2
+##### Option 2 (Best one)
 - Copy GRUnlocker.exe to the save directory and run it from there.
 - It will overwrite the current save.
 

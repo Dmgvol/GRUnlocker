@@ -9,7 +9,7 @@ Ghostrunner - Unlocks collectibles, levels, 100% and more!
 - Unlock collectibles (levels untouched)
 - Unlock levels (collectibles untouched)
 - Unlock everything (overwrites with 100% save)
-- Unlock up to a specific level (1-16)
+- Unlock up to a specific level (1-16 with corresponding upgrades/skills)
 - New game with collectibles unlocked (overwrites with a custom new-game save)
 - Reset deaths & times
 - Reset collectibles

@@ -28,7 +28,10 @@ Ghostrunner - Unlocks collectibles, levels, 100% and more!
 You can start the program with the digit of the choice in the args.
 
 ## GR save file location
+### Windows
 ```%LOCALAPPDATA%\Ghostrunner\Saved\SavedGames\<long-number>\Ghostrunner.sav```
+### Linux
+```<steamfolder>/steamapps/compatdata/1139900/pfx/drive_c/users/steamuser/Local Settings/Application Data/Ghosteamuser/Local Settings/Application Data/Ghostrunner/Saved/SaveGames/<long-number>/Ghostrunner.sav```
 
 ## Who it is aimed at?
 Mostly for players that finished the game and want to practice or speedrun the game with their favorite katanas.

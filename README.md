@@ -1,7 +1,6 @@
 [![](https://img.shields.io/badge/Jack-Unlocked-green)](https://github.com/Dmgvol/GRUnlocker/) [![](https://img.shields.io/badge/Discord-GRSR-red)](https://discord.com/invite/eZRz3Q5) ![](https://img.shields.io/github/downloads/dmgvol/grunlocker/total)
 
 
-
 # GRUnlocker
 Ghostrunner - Unlocks collectibles, levels, 100% and more!
 
@@ -9,10 +8,10 @@ Ghostrunner - Unlocks collectibles, levels, 100% and more!
 - Unlock collectibles (levels untouched)
 - Unlock levels (collectibles untouched)
 - Unlock everything (overwrites with 100% save)
-- Unlock up to a specific level (1-16 with corresponding upgrades/skills)
+- Unlock up to a specific level (1-16 with corresponding upgrades/skills)   ![](https://img.shields.io/badge/%20-%20New-brightgreen)
 - New game with collectibles unlocked (overwrites with a custom new-game save)
-- Reset deaths & times
-- Reset collectibles
+- Reset deaths & times  ![](https://img.shields.io/badge/%20-%20New-brightgreen)
+- Reset collectibles    ![](https://img.shields.io/badge/%20-%20New-brightgreen)
 
 ## Usage
 ##### Option 1

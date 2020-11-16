@@ -26,8 +26,6 @@ make sure you paste the full paths accordingly, for example:
   "GameDirectory": "C:\Program Files\Steam\steamapps\common\Ghostrunner"
 }
 ```
-(you can recreate the config using one of options in the program).
-
 **You can still use it as the previous versions but with less functionality(not referring to .sav file).**
 
 #### Option 2 (Easiest)

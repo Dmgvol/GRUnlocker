@@ -27,7 +27,7 @@ namespace GRUnlocker {
         public void Load() {
             if(File.Exists(ConfigFileName)) {
                 if(!ParseManually()) {
-                    Console.WriteLine("Error: config.json file\n -Invalid/missing directories or corruped config.json file");
+                    Console.WriteLine("Error: config.json file\n -Invalid/missing directories or corrupted config.json file");
                     InputHandler.ExitProgram();
                 }
             } else {

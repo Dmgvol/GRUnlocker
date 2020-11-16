@@ -51,10 +51,10 @@ You can start the program with the digit of the choice in the args.
 Mostly for players that finished the game and want to practice or speedrun the game with their favorite katanas.
 If you haven't finished the game nor collected all the collectibles beforehand.. I'll highly recommend to do so.
 
-### Disclaimer
+## Disclaimer
 Make sure you backup your .save file before you run the program! (just in case).
 
 This program/script does not guarantee you'll receive the corresponded achievements if any at all, so if you want to get those achievements, you should do it yourself.
 
-### Reporting
+## Reporting
 If you encounter any type of issues/bugs or even suggestions, @ me in Discord.

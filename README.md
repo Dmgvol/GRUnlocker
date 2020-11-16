@@ -8,20 +8,35 @@ Ghostrunner - Unlocks collectibles, levels, 100% and more!
 - Unlock collectibles (levels untouched)
 - Unlock levels (collectibles untouched)
 - Unlock everything (overwrites with 100% save)
-- Unlock up to a specific level (1-16 with corresponding upgrades/skills)   ![](https://img.shields.io/badge/%20-%20New-brightgreen)
+- Unlock up to a specific level (1-16 with corresponding upgrades/skills)   
 - New game with collectibles unlocked (overwrites with a custom new-game save)
-- Reset deaths & times  ![](https://img.shields.io/badge/%20-%20New-brightgreen)
-- Reset collectibles    ![](https://img.shields.io/badge/%20-%20New-brightgreen)
+- New game with custom sword (equipped sword yet nothing unlocked) ![](https://img.shields.io/badge/%20-%20New-brightgreen)
+- Replace selected sword (equip specific sword, even if not unlocked) ![](https://img.shields.io/badge/%20-%20New-brightgreen)
+- Reset deaths & times  
+- Reset collectibles    
+- Toggle Intros (Splash + trailer when launching the game) ![](https://img.shields.io/badge/%20-%20New-brightgreen)
 
 ## Usage
-##### Option 1
-- Copy your ```.sav``` file to the same directory as the GRUnlocker.exe.
-- Run the program and choose one of the given options.
-- Copy back the updated ```.sav``` file to GR save folder.
+##### Option 1 [new]
+The latest version introduces the config file so you don't have to move the exe/save file everytime, 
+make sure you paste the full paths accordingly, for example:
+```
+{
+  "SaveDirectory": "C:\Users\<username>\AppData\Local\Ghostrunner\Saved\SaveGames\<long-number>",
+  "GameDirectory": "C:\Program Files\Steam\steamapps\common\Ghostrunner"
+}
+```
+(you can recreate the config using one of options in the program)
+However, you can still use it as the previous version but with less functionality.
 
 ##### Option 2 (Best one)
 - Copy GRUnlocker.exe to the save directory and run it from there.
 - It will overwrite the current save.
+
+##### Option 3
+- Copy your ```.sav``` file to the same directory as the GRUnlocker.exe.
+- Run the program and choose one of the given options.
+- Copy back the updated ```.sav``` file to GR save folder.
 
 #### Starting arguments
 You can start the program with the digit of the choice in the args.

@@ -20,7 +20,7 @@ Ghostrunner - Unlocks collectibles, levels, 100% and more!
 #### Option 1 [new]
 The latest version introduces the config file so you don't have to move the exe/save file everytime, 
 make sure you paste the full paths accordingly, for example:
-```
+```json
 {
   "SaveDirectory": "C:\Users\<username>\AppData\Local\Ghostrunner\Saved\SaveGames\<long-number>",
   "GameDirectory": "C:\Program Files\Steam\steamapps\common\Ghostrunner"

@@ -1,15 +1,17 @@
 [![](https://img.shields.io/badge/Jack-Unlocked-green)](https://github.com/Dmgvol/GRUnlocker/) [![](https://img.shields.io/badge/Discord-GRSR-red)](https://discord.com/invite/eZRz3Q5) ![](https://img.shields.io/github/downloads/dmgvol/grunlocker/total)
 
 
-
 # GRUnlocker
-Ghostrunner - Unlocks collectibles, levels, 100% and has an option to start a new-game with collectibles.
+Ghostrunner - Unlocks collectibles, levels, 100% and more!
 
 ### Available options
 - Unlock collectibles (levels untouched)
 - Unlock levels (collectibles untouched)
 - Unlock everything (overwrites with 100% save)
+- Unlock up to a specific level (1-16 with corresponding upgrades/skills)   ![](https://img.shields.io/badge/%20-%20New-brightgreen)
 - New game with collectibles unlocked (overwrites with a custom new-game save)
+- Reset deaths & times  ![](https://img.shields.io/badge/%20-%20New-brightgreen)
+- Reset collectibles    ![](https://img.shields.io/badge/%20-%20New-brightgreen)
 
 ## Usage
 ##### Option 1
@@ -17,7 +19,7 @@ Ghostrunner - Unlocks collectibles, levels, 100% and has an option to start a ne
 - Run the program and choose one of the given options.
 - Copy back the updated ```.sav``` file to GR save folder.
 
-##### Option 2
+##### Option 2 (Best one)
 - Copy GRUnlocker.exe to the save directory and run it from there.
 - It will overwrite the current save.
 
@@ -25,7 +27,10 @@ Ghostrunner - Unlocks collectibles, levels, 100% and has an option to start a ne
 You can start the program with the digit of the choice in the args.
 
 ## GR save file location
+### Windows
 ```%LOCALAPPDATA%\Ghostrunner\Saved\SavedGames\<long-number>\Ghostrunner.sav```
+### Linux
+```<steamfolder>/steamapps/compatdata/1139900/pfx/drive_c/users/steamuser/Local Settings/Application Data/Ghosteamuser/Local Settings/Application Data/Ghostrunner/Saved/SaveGames/<long-number>/Ghostrunner.sav```
 
 ## Who it is aimed at?
 Mostly for players that finished the game and want to practice or speedrun the game with their favorite katanas.

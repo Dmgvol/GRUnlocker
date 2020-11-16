@@ -184,7 +184,13 @@
   <data name="Levels" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Levels.sav;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="newgame" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\newgame.sav;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="Newgame_collectiables" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Newgame_collectiables.sav;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SwordsData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SwordsData.sav;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

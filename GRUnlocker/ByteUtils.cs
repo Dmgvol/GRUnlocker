@@ -8,6 +8,17 @@ namespace GRUnlocker {
         ////// Byte Utils//////
         public static readonly int[] Empty = new int[0];
 
+        public static int GetPrevNewLineAnchor(byte[] arr, int current) {
+            current--;
+            while(current > 0) {
+                if(arr[current] == Encoding.UTF8.GetBytes("\n")[0] || arr[current] == Encoding.UTF8.GetBytes("\r")[0]) {
+                    return current;
+                }
+                current--;
+            }
+            return 0;
+        }
+
         public static void ReplaceByteRange(ref byte[] bytes, byte[] newRange, string fromString, string toString, int fromIndex = 0) {
 
             List<byte> lst = bytes.ToList();

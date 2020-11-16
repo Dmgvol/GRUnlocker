@@ -17,7 +17,7 @@ Ghostrunner - Unlocks collectibles, levels, 100% and more!
 - Toggle Intros (Splash + trailer when launching the game) ![](https://img.shields.io/badge/%20-%20New-brightgreen)
 
 ## Usage
-##### Option 1 [new]
+#### Option 1 [new]
 The latest version introduces the config file so you don't have to move the exe/save file everytime, 
 make sure you paste the full paths accordingly, for example:
 ```
@@ -29,11 +29,11 @@ make sure you paste the full paths accordingly, for example:
 (you can recreate the config using one of options in the program)
 However, you can still use it as the previous version but with less functionality.
 
-##### Option 2 (Best one)
+#### Option 2 (Best one)
 - Copy GRUnlocker.exe to the save directory and run it from there.
 - It will overwrite the current save.
 
-##### Option 3
+#### Option 3
 - Copy your ```.sav``` file to the same directory as the GRUnlocker.exe.
 - Run the program and choose one of the given options.
 - Copy back the updated ```.sav``` file to GR save folder.

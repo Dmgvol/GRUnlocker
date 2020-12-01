@@ -41,8 +41,10 @@ make sure you paste the full paths accordingly, for example:
 You can start the program with the digit of the choice in the args.
 
 ## GR save file location
-### Windows
+### Windows (Steam)
 ```%LOCALAPPDATA%\Ghostrunner\Saved\SavedGames\<long-number>\Ghostrunner.sav```
+### Windows (Epic Games Store)
+```%LOCALAPPDATA%\Ghostrunner\Saved\SavedGames\GhostrunnerSave.sav```
 ### Linux
 ```<steamfolder>/steamapps/compatdata/1139900/pfx/drive_c/users/steamuser/Local Settings/Application Data/Ghosteamuser/Local Settings/Application Data/Ghostrunner/Saved/SaveGames/<long-number>/Ghostrunner.sav```
 

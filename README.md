@@ -16,7 +16,7 @@ Ghostrunner - Unlocks collectibles, levels, 100% and more!
 - Reset collectibles    
 - Toggle Intros (Splash + trailer when launching the game) ![](https://img.shields.io/badge/%20-%20New-brightgreen)
 
-** Epic Games Store Users [!] **
+**Epic Games Store Users**
 The EGS version is not fully supported yet, a quick workaround is to rename 
 the "GhostrunnerSave.sav" to "Ghostrunner.sav", apply the unlocker and rename is back.
 

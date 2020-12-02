@@ -9,15 +9,28 @@ namespace GRUnlocker {
     public class Unlocker {
 
         // paths and file names
-        public const string FILE_NAME = "Ghostrunner.sav";
+        public const string FILE_NAME_Steam = "Ghostrunner.sav";
+        public const string FILE_NAME_EGS = "GhostrunnerSave.sav";
         public const string GameIntroDirectory = @"Ghostrunner\Content\Movies\";
         public const string IntroFileName1 = "SplashScreen.mp4";
         public const string IntroFileName2 = "GR_TRAILER_Demo.mp4";
         public const string FileToggleTag = "~";
+        public static bool IsSteam = true;
+
 
         // Path checkers/getters
-        public static bool FileExists() => File.Exists(GetSavePath());
-        public static string GetSavePath() => Path.Combine(Config.getInstance().SaveDirectory, FILE_NAME);
+        public static bool FileExists() {
+            if(File.Exists(Path.Combine(Config.getInstance().SaveDirectory,FILE_NAME_Steam))){
+                IsSteam = true;
+                return true;
+            } else if(File.Exists(Path.Combine(Config.getInstance().SaveDirectory, FILE_NAME_EGS))) {
+                IsSteam = false;
+                return true;
+            }
+            return false;
+        }
+
+        public static string GetSavePath() => Path.Combine(Config.getInstance().SaveDirectory, IsSteam ? FILE_NAME_Steam : FILE_NAME_EGS);
 
         public bool UnlockCollectibles() {
             InputHandler.CheckSaveExists();

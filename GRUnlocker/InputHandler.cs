@@ -9,9 +9,11 @@ namespace GRUnlocker {
         public InputHandler() {
             // print intro
             Console.WriteLine("════Ghostrunner Unlocker [by DmgVol]════");
-            Console.WriteLine($"Save path: {(Config.getInstance().IsLocalSavePath ? "local(same directory)" : "remote(from config)")}\n");
+            Console.WriteLine($"Save path: {(Config.getInstance().IsLocalSavePath ? "local(same directory)" : "remote(from config)")}");
+            bool SavFileFound = CheckSaveExists(false);
+            if(SavFileFound) Console.WriteLine($"Save version: {(Unlocker.IsSteam ? $"Steam ({Unlocker.FILE_NAME_Steam})" : $"EGS ({Unlocker.FILE_NAME_EGS})")}\n");
 
-            if(CheckSaveExists(false)) {
+            if(SavFileFound) {
                 // ==unlocking==
                 options.Add(new Option_UnlockAllCollectibles());
                 options.Add(new Option_UnlockAllLevels());
@@ -106,9 +108,9 @@ namespace GRUnlocker {
         public static bool CheckSaveExists(bool exitIfMissing = true) {
             if(!Unlocker.FileExists()) {
                 if(Config.getInstance().IsLocalSavePath)
-                    Console.WriteLine("Error: Missing .sav file!\n-Make sure the save file(Ghostrunner.sav) is in the same directory as the executable");
+                    Console.WriteLine("Error: Missing .sav file!\n-Make sure the save file is in the same directory as the executable");
                 else
-                    Console.WriteLine("Error: Missing .sav file!\n-Save file(Ghostrunner.sav) is missing from the given path (config file)");
+                    Console.WriteLine("Error: Missing .sav file!\n-Save file is missing from the given path (config file)");
 
                 if(exitIfMissing)  ExitProgram();
                 return false;

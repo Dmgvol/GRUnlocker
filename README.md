@@ -2,7 +2,7 @@
 
 
 # GRUnlocker
-Ghostrunner - Unlocks collectibles, levels, 100% and more!
+Ghostrunner - Unlocks collectibles, levels, 100% save, and more!
 
 ### Available options
 - Unlock collectibles (levels untouched)
@@ -16,10 +16,6 @@ Ghostrunner - Unlocks collectibles, levels, 100% and more!
 - Reset collectibles    
 - Toggle Intros (Splash + trailer when launching the game) ![](https://img.shields.io/badge/%20-%20New-brightgreen)
 
-**Epic Games Store Users**
-
-The EGS version is not fully supported yet, a quick workaround is to rename 
-the "GhostrunnerSave.sav" to "Ghostrunner.sav", apply the unlocker and rename is back.
 
 ## Usage
 #### Option 1 ![](https://img.shields.io/badge/%20-%20New-brightgreen)
@@ -54,12 +50,18 @@ You can start the program with the digit of the choice in the args.
 ```<steamfolder>/steamapps/compatdata/1139900/pfx/drive_c/users/steamuser/Local Settings/Application Data/Ghosteamuser/Local Settings/Application Data/Ghostrunner/Saved/SaveGames/<long-number>/Ghostrunner.sav```
 
 ## Who it is aimed at?
-Mostly for players that finished the game and want to practice or speedrun the game with their favorite katanas.
-If you haven't finished the game nor collected all the collectibles beforehand.. I'll highly recommend to do so.
+Mostly for players that finished the game and want to practice or speedrun the game with their favorite katanas or specific progress unlocked.
+If you haven't finished the game nor collected all the collectibles beforehand.. I'll highly recommend doing so.
 
 ## Disclaimer
 Make sure you backup your .save file before you run the program! (just in case).
+I'm not responsible for any progress loss, so keep a backup prior to using it.
 
+### Speedrunning
+Please note that New-Game modifications (collectibles unlocked or custom sword) are not allowed for use during full runs at this time. (subject to be changed)
+However, you're allowed to do ILs(Individual Levels) with it.
+
+### Achievements
 This program/script does not guarantee you'll receive the corresponded achievements if any at all, so if you want to get those achievements, you should do it yourself.
 
 ## Reporting

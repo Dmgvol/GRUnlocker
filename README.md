@@ -15,7 +15,7 @@ Ghostrunner - Unlocks collectibles, levels, 100% save, and more!
 - Replace selected sword (equip specific sword, even if not unlocked) 
 - Reset deaths & times  
 - Reset collectibles    
-- Toggle Intros (Splash + trailer when launching the game) ![](https://img.shields.io/badge/%20-%20New-brightgreen)
+- Toggle Intros (Splash + trailer when launching the game)
 
 
 ## Usage

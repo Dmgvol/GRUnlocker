@@ -3,6 +3,7 @@
 
 # GRUnlocker
 Ghostrunner - Unlocks collectibles, levels, 100% save, and more!
+**New Update! Supports Winter-Patch (hardcore levels)!**
 
 ### Available options
 - Unlock collectibles (levels untouched)

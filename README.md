@@ -20,6 +20,8 @@ Ghostrunner - Unlocks collectibles, levels, 100% save, and more!
 - Toggle Intros (Splash + trailer when launching the game)
 
 
+**Note: When unlocking any hardcore levels it unlocks all classic levels with it.**
+
 ## Usage
 ### Options 1 ![](https://img.shields.io/badge/%20-%20New-brightgreen)
 The latest version introduces the 'save-file auto detect', GRUnlocker will attempt to find the default save file location.

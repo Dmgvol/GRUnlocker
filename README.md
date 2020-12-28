@@ -6,20 +6,28 @@ Ghostrunner - Unlocks collectibles, levels, 100% save, and more!
 
 ### Available options
 - Unlock collectibles (levels untouched)
-- Unlock levels (collectibles untouched)
-- Unlock everything (overwrites with 100% save)
+- Unlock all levels (classic + hardcore support) (collectibles untouched)     ![](https://img.shields.io/badge/%20-%20New-brightgreen)   
+- Unlock everything (classic + hardcore support) (overwrites with 100% save)  ![](https://img.shields.io/badge/%20-%20New-brightgreen)
 - Unlock up to a specific level (1-16 with corresponding upgrades/skills)   
+- Unlock up to a specific hardcore level (1-16)                               ![](https://img.shields.io/badge/%20-%20New-brightgreen)
 - New game with collectibles unlocked (overwrites with a custom new-game save)
-- New game with custom sword (equipped sword yet nothing unlocked) ![](https://img.shields.io/badge/%20-%20New-brightgreen)
-- Replace selected sword (equip specific sword, even if not unlocked) ![](https://img.shields.io/badge/%20-%20New-brightgreen)
+- New game with custom sword (equipped sword yet nothing unlocked) 
+- Replace selected sword (equip specific sword, even if not unlocked) 
 - Reset deaths & times  
 - Reset collectibles    
 - Toggle Intros (Splash + trailer when launching the game) ![](https://img.shields.io/badge/%20-%20New-brightgreen)
 
 
 ## Usage
-#### Option 1 ![](https://img.shields.io/badge/%20-%20New-brightgreen)
-The latest version introduces the config file so you don't have to move the exe/save file everytime, 
+### Options 1 ![](https://img.shields.io/badge/%20-%20New-brightgreen)
+The latest version introduces the 'save-file auto detect', GRUnlocker will attempt to find the default save file location.
+Will display "Save Path: Auto" if successfully found the save file.
+
+#### Option 2 (Easiest)
+- Copy GRUnlocker.exe to the save directory and run it from there.
+
+#### Option 3 
+Using the config file (can create through the GRUnlocker)
 make sure you paste the full paths accordingly, for example:
 ```
 {
@@ -27,22 +35,20 @@ make sure you paste the full paths accordingly, for example:
   "GameDirectory": "C:\Program Files\Steam\steamapps\common\Ghostrunner"
 }
 ```
-**You can still use it as the previous versions but with less functionality(not referring to .sav file).**
+**Valid config file is required for 'Toggle Intros' Feature**
 
-#### Option 2 (Easiest)
-- Copy GRUnlocker.exe to the save directory and run it from there.
-- It will overwrite the current save.
-
-#### Option 3
+#### Option 4 (Old)
 - Copy your ```.sav``` file to the same directory as the GRUnlocker.exe.
 - Run the program and choose one of the given options.
 - Copy back the updated ```.sav``` file to GR save folder.
 
 #### Starting arguments
-You can start the program with the digit of the choice in the args.
+```-displaypath``` - Will display the current save file path which it is working with.
+
+~~You can start the program with the digit of the choice in the args.~~ (Removed in latest version)
 
 ## GR save file location
-### Windows (Steam)
+### Windows (Steam/GOG)
 ```%LOCALAPPDATA%\Ghostrunner\Saved\SavedGames\<long-number>\Ghostrunner.sav```
 ### Windows (Epic Games Store)
 ```%LOCALAPPDATA%\Ghostrunner\Saved\SavedGames\GhostrunnerSave.sav```
@@ -51,18 +57,21 @@ You can start the program with the digit of the choice in the args.
 
 ## Who it is aimed at?
 Mostly for players that finished the game and want to practice or speedrun the game with their favorite katanas or specific progress unlocked.
+Or people which lost their save files and want to recover from where they've left.
 If you haven't finished the game nor collected all the collectibles beforehand.. I'll highly recommend doing so.
 
 ## Disclaimer
 Make sure you backup your .save file before you run the program! (just in case).
-I'm not responsible for any progress loss, so keep a backup prior to using it.
+I'm not responsible for any progress loss or/and achievements completions, so keep a backup prior to using it.
 
 ### Speedrunning
-Please note that New-Game modifications (collectibles unlocked or custom sword) are not allowed for use during full runs at this time. (subject to be changed)
+Please note that New-Game modifications (collectibles unlocked or custom sword) are not allowed for use during full runs at this time.
 However, you're allowed to do ILs(Individual Levels) with it.
 
 ### Achievements
-This program/script does not guarantee you'll receive the corresponded achievements if any at all, so if you want to get those achievements, you should do it yourself.
+The GRUnlocker may and **will** trigger different achievements, you have been warned!
+So if you want to get those achievements, you should do it by yourself.
+(Thanks to animayyo for testing and finding this out)
 
 ## Reporting
-If you encounter any type of issues/bugs or even suggestions, @ me in Discord.
+If you encounter any type of issues/bugs or even suggestions, @ me on Discord.

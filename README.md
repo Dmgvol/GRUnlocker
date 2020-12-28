@@ -23,12 +23,12 @@ Ghostrunner - Unlocks collectibles, levels, 100% save, and more!
 **Note: When unlocking any hardcore levels it unlocks all classic levels with it.**
 
 ## Usage
-### Options 1 ![](https://img.shields.io/badge/%20-%20New-brightgreen)
+### Option 1 ![](https://img.shields.io/badge/%20-%20New-brightgreen)
 The latest version introduces the 'save-file auto detect', GRUnlocker will attempt to find the default save file location.
 Will display "Save Path: Auto" if successfully found the save file.
 
 #### Option 2 (Easiest)
-- Copy GRUnlocker.exe to the save directory and run it from there.
+Copy GRUnlocker.exe to the save directory and run it from there.
 
 #### Option 3 
 Using the config file (can create through the GRUnlocker)
@@ -46,8 +46,8 @@ make sure you paste the full paths accordingly, for example:
 - Run the program and choose one of the given options.
 - Copy back the updated ```.sav``` file to GR save folder.
 
-#### Starting arguments
-```-displaypath``` - Will display the current save file path which it is working with.
+### Starting arguments
+```-displaypath``` > Will display the current save file path which it is working with.
 
 ~~You can start the program with the digit of the choice in the args.~~ (Removed in latest version)
 
@@ -62,6 +62,7 @@ make sure you paste the full paths accordingly, for example:
 ## Who it is aimed at?
 Mostly for players that finished the game and want to practice or speedrun the game with their favorite katanas or specific progress unlocked.
 Or people which lost their save files and want to recover from where they've left.
+
 If you haven't finished the game nor collected all the collectibles beforehand.. I'll highly recommend doing so.
 
 ## Disclaimer

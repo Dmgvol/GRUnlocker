@@ -66,6 +66,9 @@
   <PropertyGroup>
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon%281%29.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -98,6 +101,22 @@
     <None Include="Resources\defaultLevelDetails.sav" />
     <None Include="Resources\defaultLevelDetails_2.sav" />
     <None Include="Resources\EmptyUnlockedList.sav" />
+    <None Include="Resources\Ghostrunner_hc_1.sav" />
+    <None Include="Resources\Ghostrunner_hc_10.sav" />
+    <None Include="Resources\Ghostrunner_hc_11.sav" />
+    <None Include="Resources\Ghostrunner_hc_12.sav" />
+    <None Include="Resources\Ghostrunner_hc_13.sav" />
+    <None Include="Resources\Ghostrunner_hc_14.sav" />
+    <None Include="Resources\Ghostrunner_hc_15.sav" />
+    <None Include="Resources\Ghostrunner_hc_16.sav" />
+    <None Include="Resources\Ghostrunner_hc_2.sav" />
+    <None Include="Resources\Ghostrunner_hc_3.sav" />
+    <None Include="Resources\Ghostrunner_hc_4.sav" />
+    <None Include="Resources\Ghostrunner_hc_5.sav" />
+    <None Include="Resources\Ghostrunner_hc_6.sav" />
+    <None Include="Resources\Ghostrunner_hc_7.sav" />
+    <None Include="Resources\Ghostrunner_hc_8.sav" />
+    <None Include="Resources\Ghostrunner_hc_9.sav" />
     <None Include="Resources\Ghostrunner_lvl1.sav" />
     <None Include="Resources\Ghostrunner_lvl10.sav" />
     <None Include="Resources\Ghostrunner_lvl11.sav" />
@@ -115,6 +134,7 @@
     <None Include="Resources\Ghostrunner_lvl8.sav" />
     <None Include="Resources\Ghostrunner_lvl9.sav" />
     <None Include="Resources\Hundo.sav" />
+    <None Include="Resources\hundoHC.sav" />
     <None Include="Resources\Levels.sav" />
     <None Include="Resources\newgame.sav" />
     <None Include="Resources\Newgame_collectiables.sav" />
@@ -152,6 +172,8 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="icon%281%29.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

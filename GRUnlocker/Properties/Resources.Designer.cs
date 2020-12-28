@@ -103,6 +103,166 @@ namespace GRUnlocker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] Ghostrunner_hc_1 {
+            get {
+                object obj = ResourceManager.GetObject("Ghostrunner_hc_1", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Ghostrunner_hc_10 {
+            get {
+                object obj = ResourceManager.GetObject("Ghostrunner_hc_10", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Ghostrunner_hc_11 {
+            get {
+                object obj = ResourceManager.GetObject("Ghostrunner_hc_11", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Ghostrunner_hc_12 {
+            get {
+                object obj = ResourceManager.GetObject("Ghostrunner_hc_12", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Ghostrunner_hc_13 {
+            get {
+                object obj = ResourceManager.GetObject("Ghostrunner_hc_13", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Ghostrunner_hc_14 {
+            get {
+                object obj = ResourceManager.GetObject("Ghostrunner_hc_14", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Ghostrunner_hc_15 {
+            get {
+                object obj = ResourceManager.GetObject("Ghostrunner_hc_15", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Ghostrunner_hc_16 {
+            get {
+                object obj = ResourceManager.GetObject("Ghostrunner_hc_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Ghostrunner_hc_2 {
+            get {
+                object obj = ResourceManager.GetObject("Ghostrunner_hc_2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Ghostrunner_hc_3 {
+            get {
+                object obj = ResourceManager.GetObject("Ghostrunner_hc_3", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Ghostrunner_hc_4 {
+            get {
+                object obj = ResourceManager.GetObject("Ghostrunner_hc_4", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Ghostrunner_hc_5 {
+            get {
+                object obj = ResourceManager.GetObject("Ghostrunner_hc_5", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Ghostrunner_hc_6 {
+            get {
+                object obj = ResourceManager.GetObject("Ghostrunner_hc_6", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Ghostrunner_hc_7 {
+            get {
+                object obj = ResourceManager.GetObject("Ghostrunner_hc_7", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Ghostrunner_hc_8 {
+            get {
+                object obj = ResourceManager.GetObject("Ghostrunner_hc_8", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Ghostrunner_hc_9 {
+            get {
+                object obj = ResourceManager.GetObject("Ghostrunner_hc_9", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] Ghostrunner_lvl1 {
             get {
                 object obj = ResourceManager.GetObject("Ghostrunner_lvl1", resourceCulture);
@@ -266,6 +426,16 @@ namespace GRUnlocker.Properties {
         internal static byte[] Hundo {
             get {
                 object obj = ResourceManager.GetObject("Hundo", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] hundoHC {
+            get {
+                object obj = ResourceManager.GetObject("hundoHC", resourceCulture);
                 return ((byte[])(obj));
             }
         }

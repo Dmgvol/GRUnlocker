@@ -6,14 +6,23 @@ namespace GRUnlocker {
     class Config {
 
         // Global settings
-        public string SaveDirectory { get; private set; } = "";
+        private string SaveDirectory;
         public string GameDirectory { get; private set; } = "";
 
-        public bool IsLocalSavePath = true;
-        public bool ValidGameDirectory = false;
+        // save file
+        public bool DisplayPath { get; private set; } = false;
+        public enum SaveType { None, SteamOrGOG, EGS }
+        public enum SaveLocation { None, Local, Remote, Auto }
+
+        public SaveType saveType = SaveType.None;
+        public SaveLocation saveLocation = SaveLocation.None;
+        public string SaveFilePath { get; private set; } = "";
+
 
         // Private settings
-        private const string ConfigFileName = "config.json";
+        private const string FILE_NAME_CONFIG = "config.json";
+        private const string FILE_NAME_Steam = "Ghostrunner.sav";
+        private const string FILE_NAME_EGS = "GhostrunnerSave.sav";
 
         // single instance
         private static Config Instance;
@@ -24,18 +33,29 @@ namespace GRUnlocker {
         }
 
         // Load config file
-        public void Load() {
-            if(File.Exists(ConfigFileName)) {
+        public void Load(string[] args) {
+            // ARGS
+            if(args.Contains("-displaypath")) 
+                DisplayPath = true;
+
+            // config file found?
+            if(File.Exists(FILE_NAME_CONFIG)) {
                 if(!ParseManually()) {
                     Console.WriteLine("Error: config.json file\n -Invalid/missing directories or corrupted config.json file");
                     InputHandler.ExitProgram();
                 }
             } else {
                 // no config file, local path file
-                SaveDirectory = "";
-                GameDirectory = "";
-                IsLocalSavePath = true;
+                SaveDirectory = Directory.GetCurrentDirectory();
+                if(DetectFile()) { // file found in same directory, flag as local
+                    saveLocation = SaveLocation.Local;
+                }
             }
+
+
+            // failed to find local + remote(config file), try auto detect
+            if(saveLocation == SaveLocation.None)
+                AutoDetect();
         }
 
         // Note:    creating and parsing manually to avoid 3'rd party .dll dependencies like Newtonsoft-Json,
@@ -47,15 +67,48 @@ namespace GRUnlocker {
                     $"  \"{nameof(SaveDirectory)}\": \"\",\n" +
                     $"  \"{nameof(GameDirectory)}\": \"\"\n" +
                     "}";
-                File.WriteAllText(ConfigFileName, str);
+                File.WriteAllText(FILE_NAME_CONFIG, str);
                 return true;
             } catch(Exception) {}
             return false;
         }
 
+        private bool AutoDetect() {
+            // attempts to auto find .sav file
+            string savePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), @"Ghostrunner\Saved\SaveGames\");
+            if(!Directory.Exists(savePath)) return false;
+
+
+            // EGS VERSION
+            if(File.Exists(Path.Combine(savePath, FILE_NAME_EGS))) {
+                // found it - EGS
+                SaveFilePath = Path.Combine(savePath, FILE_NAME_EGS);
+                saveType = SaveType.EGS;
+                saveLocation = SaveLocation.Auto;
+                return true;
+            }
+
+            // STEAM VERSION
+            var folders = Directory.EnumerateDirectories(savePath).ToList();
+            for(int i = 0; i < folders.Count(); i++) {
+                long steamUserID = -1;
+                if(Path.GetFileName(folders[i]).Length > 15 && Path.GetFileName(folders[i]).Length < 20 && long.TryParse(Path.GetFileName(folders[i]), out steamUserID) && steamUserID > 0) {
+                    savePath = Path.Combine(savePath, "" + steamUserID,  FILE_NAME_Steam);
+                    if(File.Exists(savePath)) {
+                        // found it - STEAM/GOG
+                        SaveFilePath = savePath;
+                        saveType = SaveType.SteamOrGOG;
+                        saveLocation = SaveLocation.Auto;
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
         private bool ParseManually() {
-            if(!File.Exists(ConfigFileName)) return false;
-            var result = File.ReadAllText(ConfigFileName)
+            if(!File.Exists(FILE_NAME_CONFIG)) return false;
+            var result = File.ReadAllText(FILE_NAME_CONFIG)
                     .Split(new[] { '\n', '\r', ',', '\"' }, StringSplitOptions.RemoveEmptyEntries)
                     .Where(x => !string.IsNullOrWhiteSpace(x.Trim())).ToArray();
 
@@ -68,16 +121,29 @@ namespace GRUnlocker {
                         // check save directory
                         if(Directory.Exists(result[1])) {
                             SaveDirectory = result[1];
-                            IsLocalSavePath = false;
+                            saveLocation = SaveLocation.Remote;
+                            DetectFile();
                         }
                         // check game directory
                         if(Directory.Exists(result[3]) && GameDirectoryStructureValid(result[3])) {
                             GameDirectory = result[3];
-                            ValidGameDirectory = true;
                         }
                         return true;
                     }
                 }
+            }
+            return false;
+        }
+
+        private bool DetectFile() {
+            if(File.Exists(Path.Combine(SaveDirectory, FILE_NAME_Steam))) {
+                SaveFilePath = Path.Combine(SaveDirectory, FILE_NAME_Steam);
+                saveType = SaveType.SteamOrGOG;
+                return true;
+            } else if(File.Exists(Path.Combine(SaveDirectory, FILE_NAME_EGS))) {
+                SaveFilePath = Path.Combine(SaveDirectory, FILE_NAME_EGS);
+                saveType = SaveType.SteamOrGOG;
+                return true;
             }
             return false;
         }

@@ -19,6 +19,13 @@ namespace GRUnlocker {
             return 0;
         }
 
+        public static void ReplaceByteRange(ref byte[] bytes, byte[] newRange, int index) {
+            var lst = bytes.ToList();
+            lst.RemoveRange(index, newRange.Count());
+            lst.InsertRange(index, newRange);
+            bytes = lst.ToArray();
+        }
+
         public static void ReplaceByteRange(ref byte[] bytes, byte[] newRange, string fromString, string toString, int fromIndex = 0) {
 
             List<byte> lst = bytes.ToList();

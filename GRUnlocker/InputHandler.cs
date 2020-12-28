@@ -9,27 +9,32 @@ namespace GRUnlocker {
         public InputHandler() {
             // print intro
             Console.WriteLine("════Ghostrunner Unlocker [by DmgVol]════");
-            Console.WriteLine($"Save path: {(Config.getInstance().IsLocalSavePath ? "local(same directory)" : "remote(from config)")}");
+            Console.WriteLine($"Save Path: {Config.getInstance().saveLocation}\nSave Type: {Config.getInstance().saveType}");
+            if(Config.getInstance().DisplayPath) Console.WriteLine($"Path: {Config.getInstance().SaveFilePath}");
+            Console.WriteLine();
             bool SavFileFound = CheckSaveExists(false);
-            if(SavFileFound) Console.WriteLine($"Save version: {(Unlocker.IsSteam ? $"Steam ({Unlocker.FILE_NAME_Steam})" : $"EGS ({Unlocker.FILE_NAME_EGS})")}\n");
-
+            
             if(SavFileFound) {
                 // ==unlocking==
                 options.Add(new Option_UnlockAllCollectibles());
                 options.Add(new Option_UnlockAllLevels());
-                options.Add(new Option_UnlockEverything());
-                options.Add(new Option_UnlockUpToLevel());
-                options.Add(new Option_NewGameCollectibles());
-                options.Add(new Option_NewGameSword());
-                options.Add(new Option_ReplaceSelectedSword());
+                options.Add(new Option_UnlockAllLevelsHC());
+                options.Add(new Option_UnlockEverything());         
+                options.Add(new Option_UnlockEverythingHC());       
+                options.Add(new Option_UnlockUpToLevel());          
+                options.Add(new Option_UnlockUpToLevelHC());        
+                options.Add(new Option_NewGameCollectibles());      
+                options.Add(new Option_NewGameSword());             
+                options.Add(new Option_ReplaceSelectedSword());     
                 // ==resetting==
                 options.Add(new Option_ResetLevelDetails());
                 options.Add(new Option_ResetCollectibles());
 
                 // ==game related==
-                if(!Config.getInstance().IsLocalSavePath)
+                if(Config.getInstance().saveLocation == Config.SaveLocation.Remote)
                     options.Add(new Option_ToggleIntros());
                 options.Add(new Option_RemoveKevin());
+                options.Add(new Option_WinterDLC());
             }
 
             // == GRUnlocker related== 
@@ -45,15 +50,10 @@ namespace GRUnlocker {
             }
             Console.WriteLine("─────────────────────────────────");
 
-            // read input or args if any
-            string input = "";
-            if(Program.ARGS != null && Program.ARGS.Length == 1) {
-                input += Program.ARGS[0][0];
-                Console.WriteLine("Using args: " + input);
-            } else {
-                Console.Write("\nOption:\t");
-                input = Console.ReadLine();
-            }
+            // read input
+            Console.Write("\nOption:\t");
+            string input = Console.ReadLine();
+            
 
             // valid?
             bool successFlag = true;
@@ -61,7 +61,7 @@ namespace GRUnlocker {
             if(Int32.TryParse(input, out optionNumber) && optionNumber > 0 && optionNumber < options.Count + 1) {
                 int i = optionNumber - 1;
                 // special case - unlock up to level, requires more input
-                if(options[i] is Option_UnlockUpToLevel) {
+                if(options[i] is Option_UnlockUpToLevel || options[i] is Option_UnlockUpToLevelHC) {
                     Console.WriteLine("Up to which level to unlock? (1-16)");
                     Console.WriteLine("─────────────────────────────────");
                     Console.Write(">");
@@ -85,7 +85,7 @@ namespace GRUnlocker {
             }
 
             // print results
-            if(successFlag) 
+            if(successFlag)
                 Console.WriteLine("Patched successfully!");
             else
                 Console.WriteLine("Error: failed to patch!\n-Something went wrong, missing permissions/files or corrupted .sav file");
@@ -107,12 +107,22 @@ namespace GRUnlocker {
 
         public static bool CheckSaveExists(bool exitIfMissing = true) {
             if(!Unlocker.FileExists()) {
-                if(Config.getInstance().IsLocalSavePath)
-                    Console.WriteLine("Error: Missing .sav file!\n-Make sure the save file is in the same directory as the executable");
-                else
-                    Console.WriteLine("Error: Missing .sav file!\n-Save file is missing from the given path (config file)");
+                Console.WriteLine("Error: Missing .sav file!");
 
-                if(exitIfMissing)  ExitProgram();
+                // error msg based on save location
+                switch(Config.getInstance().saveLocation) {
+                    case Config.SaveLocation.Local:
+                        Console.WriteLine("-Make sure the save file is in the same directory as the executable.");
+                        break;
+                    case Config.SaveLocation.Remote:
+                        Console.WriteLine("-Save file is missing from the given path (config file).");
+                        break;
+                    case Config.SaveLocation.Auto:
+                        Console.WriteLine("-Can't find save file.");
+                        break;
+                }
+              
+                if(exitIfMissing) ExitProgram();
                 return false;
             }
             return true;

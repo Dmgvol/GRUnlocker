@@ -1,12 +1,10 @@
 ﻿namespace GRUnlocker {
     class Program {
 
-        public static string[] ARGS;
-        
         static void Main(string[] args) {
-            ARGS = args;
+            System.Console.Title = "Ghostrunner Unlocker";
             // load config if any
-            Config.getInstance().Load();
+            Config.getInstance().Load(args);
 
             // handle input
             InputHandler handler = new InputHandler();

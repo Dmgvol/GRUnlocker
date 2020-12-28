@@ -17,18 +17,34 @@
     }
 
     public class Option_UnlockAllLevels : OptionCore {
-        public Option_UnlockAllLevels() : base("Unlock all levels") { }
+        public Option_UnlockAllLevels() : base("Unlock all levels (classic levels)") { }
         public override bool Patch(int index) => unlocker.UnlockLevels();
     }
 
+    public class Option_UnlockAllLevelsHC : OptionCore {
+        public Option_UnlockAllLevelsHC() : base("Unlock all levels (classic + hardcore levels)") { }
+        public override bool Patch(int index) => unlocker.UnlockLevelsHC();
+    }
+
+
     public class Option_UnlockEverything : OptionCore {
-        public Option_UnlockEverything() : base("Unlock everything (100%)") { }
+        public Option_UnlockEverything() : base("Unlock everything (100%: classic levels)") { }
         public override bool Patch(int index) => unlocker.UnlockAll();
     }
 
+    public class Option_UnlockEverythingHC : OptionCore {
+        public Option_UnlockEverythingHC() : base("Unlock everything (100%: classic + hardcore levels)") { }
+        public override bool Patch(int index) => unlocker.UnlockAllHC();
+    }
+
     public class Option_UnlockUpToLevel : OptionCore {
-        public Option_UnlockUpToLevel() : base("Unlock up to a specific level (1-16)") { }
+        public Option_UnlockUpToLevel() : base("Unlock up to a specific level (1-16) (classic)") { }
         public override bool Patch(int index) => unlocker.UnlockUpToLevel(index);
+    }
+
+    public class Option_UnlockUpToLevelHC : OptionCore {
+        public Option_UnlockUpToLevelHC() : base("Unlock up to a specific level (1-16) (hardcore)") { }
+        public override bool Patch(int index) => unlocker.UnlockUpToLevelHC(index);
     }
 
     public class Option_NewGameCollectibles : OptionCore {
@@ -72,5 +88,15 @@
         // If you took the time to actually check the code for this, kudos to you!
         // Don't worry, nothing is being changed, just a silly little easteregg.
         public override bool Patch(int index) => true;    // 'LOL NOPE'
+    }
+
+    public class Option_WinterDLC : OptionCore {
+        public Option_WinterDLC() : base("Unlock Winter DLC (sword+gloves)") { }
+        // You really think I'll unlock the dlc for free!?? NO! go buy and support the devs! ($1.99)
+        // Don't worry, nothing is being changed.
+        public override bool Patch(int index) {
+            System.Console.WriteLine("What did you expect? go buy it!\nhttps://store.steampowered.com/app/1480500/Ghostrunner__Winter_Pack/\n");
+            return true;
+        }
     }
 }

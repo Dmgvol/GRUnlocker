@@ -4,7 +4,7 @@
 # GRUnlocker
 Ghostrunner - Unlocks collectibles, levels, 100% save, and more!
 
-**New Update! Supports Winter-Patch (hardcore levels)!**
+Known Bug: Reset Collectibles won't reset equipped sword, quick fix: run again, select 'Replace selected sword' and enter 0 for default.  (will be fixed in next patch)
 
 ### Available options
 - Unlock collectibles (levels untouched)

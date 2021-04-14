@@ -26,6 +26,10 @@
         public override bool Patch(int index) => unlocker.UnlockLevelsHC();
     }
 
+    public class Option_UnlockAllLevelsKR : OptionCore {
+        public Option_UnlockAllLevelsKR() : base("Unlock all levels (classic, HC, KR levels)") { }
+        public override bool Patch(int index) => unlocker.UnlockLevelsKR();
+    }
 
     public class Option_UnlockEverything : OptionCore {
         public Option_UnlockEverything() : base("Unlock everything (100%: classic levels)") { }
@@ -36,6 +40,18 @@
         public Option_UnlockEverythingHC() : base("Unlock everything (100%: classic + hardcore levels)") { }
         public override bool Patch(int index) => unlocker.UnlockAllHC();
     }
+
+    // KR DLC
+    public class Option_UnlockEverythingKR : OptionCore {
+        public Option_UnlockEverythingKR() : base("Unlock everything (100%: classic + hardcore levels + 5 killruns)") { }
+        public override bool Patch(int index) => unlocker.UnlockAllKR();
+    }
+
+    public class Option_NGKR : OptionCore {
+        public Option_NGKR() : base("New game with 5 killruns unlocked") { }
+        public override bool Patch(int index) => unlocker.NewGameKR();
+    }
+
 
     public class Option_UnlockUpToLevel : OptionCore {
         public Option_UnlockUpToLevel() : base("Unlock up to a specific level (1-16) (classic)") { }
@@ -59,7 +75,7 @@
 
     public class Option_ResetCollectibles : OptionCore {
         public Option_ResetCollectibles() : base("Reset collectibles") { }
-        public override bool Patch(int index) => unlocker.ResetCollectibles();
+        public override bool Patch(int index) => unlocker.ResetCollectibles() && unlocker.ReplaceSelectedSword(0);
     }
 
     public class Option_ToggleIntros : OptionCore {
@@ -78,24 +94,13 @@
     }
 
 
-    public class Option_CreateConfig : OptionCore {
-        public Option_CreateConfig() : base("Create empty config file(for GRUnlocker)") { }
-        public override bool Patch(int index) => unlocker.CreateConfig();
-    }
-
-    public class Option_RemoveKevin : OptionCore {
-        public Option_RemoveKevin() : base("Remove Kevin (the drone)") { }
-        // If you took the time to actually check the code for this, kudos to you!
-        // Don't worry, nothing is being changed, just a silly little easteregg.
-        public override bool Patch(int index) => true;    // 'LOL NOPE'
-    }
-
-    public class Option_WinterDLC : OptionCore {
-        public Option_WinterDLC() : base("Unlock Winter DLC (sword+gloves)") { }
-        // You really think I'll unlock the dlc for free!?? NO! go buy and support the devs! ($1.99)
+    // FAKE 
+    public class Option_0XDLC : OptionCore {
+        public Option_0XDLC() : base("Unlock Metal OX DLC") { }
+        // You really think I'll unlock the dlc for free!?? NO! go buy and support the devs! ($4.99)
         // Don't worry, nothing is being changed.
         public override bool Patch(int index) {
-            System.Console.WriteLine("What did you expect? go buy it!\nhttps://store.steampowered.com/app/1480500/Ghostrunner__Winter_Pack/\n");
+            System.Console.WriteLine("Go buy it!\nhttps://store.steampowered.com/app/1542040/Ghostrunner__Metal_OX_Pack/\n");
             return true;
         }
     }

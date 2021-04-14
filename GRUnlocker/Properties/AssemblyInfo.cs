@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("GRUnlocker")]
-[assembly: AssemblyCopyright("Dmgvol Copyright ©  2020")]
+[assembly: AssemblyCopyright("Dmgvol Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

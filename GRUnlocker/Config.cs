@@ -7,7 +7,6 @@ namespace GRUnlocker {
 
         // Global settings
         private string SaveDirectory;
-        public string GameDirectory { get; private set; } = "";
 
         // save file
         public bool DisplayPath { get; private set; } = false;
@@ -20,7 +19,6 @@ namespace GRUnlocker {
 
 
         // Private settings
-        private const string FILE_NAME_CONFIG = "config.json";
         private const string FILE_NAME_Steam = "Ghostrunner.sav";
         private const string FILE_NAME_EGS = "GhostrunnerSave.sav";
 
@@ -38,39 +36,16 @@ namespace GRUnlocker {
             if(args.Contains("-displaypath")) 
                 DisplayPath = true;
 
-            // config file found?
-            if(File.Exists(FILE_NAME_CONFIG)) {
-                if(!ParseManually()) {
-                    Console.WriteLine("Error: config.json file\n -Invalid/missing directories or corrupted config.json file");
-                    InputHandler.ExitProgram();
-                }
-            } else {
-                // no config file, local path file
+            //local path file
                 SaveDirectory = Directory.GetCurrentDirectory();
                 if(DetectFile()) { // file found in same directory, flag as local
                     saveLocation = SaveLocation.Local;
                 }
-            }
-
+          
 
             // failed to find local + remote(config file), try auto detect
             if(saveLocation == SaveLocation.None)
                 AutoDetect();
-        }
-
-        // Note:    creating and parsing manually to avoid 3'rd party .dll dependencies like Newtonsoft-Json,
-        //          so the user can drag a single exe without copying bunch of dlls with it,
-        //          just like the previous versions if they don't like the config file (just cleaner)
-        public bool SaveManually() {
-            try {
-                string str = "{\n" +
-                    $"  \"{nameof(SaveDirectory)}\": \"\",\n" +
-                    $"  \"{nameof(GameDirectory)}\": \"\"\n" +
-                    "}";
-                File.WriteAllText(FILE_NAME_CONFIG, str);
-                return true;
-            } catch(Exception) {}
-            return false;
         }
 
         private bool AutoDetect() {
@@ -106,35 +81,6 @@ namespace GRUnlocker {
             return false;
         }
 
-        private bool ParseManually() {
-            if(!File.Exists(FILE_NAME_CONFIG)) return false;
-            var result = File.ReadAllText(FILE_NAME_CONFIG)
-                    .Split(new[] { '\n', '\r', ',', '\"' }, StringSplitOptions.RemoveEmptyEntries)
-                    .Where(x => !string.IsNullOrWhiteSpace(x.Trim())).ToArray();
-
-            result = result.Where(x => x != ": ").ToArray();
-
-            if(result.Length == 6) {
-                if(result[0] == "{" && result[result.Length - 1] == "}") {
-                    result = result.Where(x => x != "{" && x != "}").ToArray();
-                    if(result[0] == nameof(SaveDirectory) && result[2] == nameof(GameDirectory)) {
-                        // check save directory
-                        if(Directory.Exists(result[1])) {
-                            SaveDirectory = result[1];
-                            saveLocation = SaveLocation.Remote;
-                            DetectFile();
-                        }
-                        // check game directory
-                        if(Directory.Exists(result[3]) && GameDirectoryStructureValid(result[3])) {
-                            GameDirectory = result[3];
-                        }
-                        return true;
-                    }
-                }
-            }
-            return false;
-        }
-
         private bool DetectFile() {
             if(File.Exists(Path.Combine(SaveDirectory, FILE_NAME_Steam))) {
                 SaveFilePath = Path.Combine(SaveDirectory, FILE_NAME_Steam);
@@ -146,11 +92,6 @@ namespace GRUnlocker {
                 return true;
             }
             return false;
-        }
-
-        private bool GameDirectoryStructureValid(string path) {
-            // 2 directories "Engine" and "Ghostrunner", 1 file "Ghostrunner.exe"
-            return (Directory.Exists(Path.Combine(path, "Engine")) && Directory.Exists(Path.Combine(path, "Ghostrunner")) && File.Exists(Path.Combine(path, "Ghostrunner.exe")));
         }
     }
 }

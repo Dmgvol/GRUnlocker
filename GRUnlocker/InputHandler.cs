@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace GRUnlocker {
     public class InputHandler {
@@ -15,38 +16,40 @@ namespace GRUnlocker {
             bool SavFileFound = CheckSaveExists(false);
             
             if(SavFileFound) {
-                // ==unlocking==
+                // ==levels==
                 options.Add(new Option_UnlockAllCollectibles());
                 options.Add(new Option_UnlockAllLevels());
                 options.Add(new Option_UnlockAllLevelsHC());
+                options.Add(new Option_UnlockAllLevelsKR());
+                // everything
                 options.Add(new Option_UnlockEverything());         
-                options.Add(new Option_UnlockEverythingHC());       
+                options.Add(new Option_UnlockEverythingHC());
+                options.Add(new Option_UnlockEverythingKR());
+                // up to level
                 options.Add(new Option_UnlockUpToLevel());          
-                options.Add(new Option_UnlockUpToLevelHC());        
+                options.Add(new Option_UnlockUpToLevelHC());  
+                // other
                 options.Add(new Option_NewGameCollectibles());      
-                options.Add(new Option_NewGameSword());             
+                options.Add(new Option_NewGameSword());
+                options.Add(new Option_NGKR());
                 options.Add(new Option_ReplaceSelectedSword());     
                 // ==resetting==
                 options.Add(new Option_ResetLevelDetails());
                 options.Add(new Option_ResetCollectibles());
+                options.Add(new Option_ToggleIntros());
 
-                // ==game related==
-                if(Config.getInstance().saveLocation == Config.SaveLocation.Remote)
-                    options.Add(new Option_ToggleIntros());
-                options.Add(new Option_RemoveKevin());
-                options.Add(new Option_WinterDLC());
+                // fake
+                options.Add(new Option_0XDLC());
             }
-
-            // == GRUnlocker related== 
-            // this option does not require .sav file nor valid config file
-            options.Add(new Option_CreateConfig());
         }
 
         public void Handle() {
             Console.WriteLine("─────────────────────────────────");
             Console.WriteLine("───Options (type in the digit)───");
+            int[] spacers = new int[4] { 3, 6, 8, 12 };
             for(int i = 0; i < options.Count; i++) {
                 Console.WriteLine($"{i + 1} - {options[i].desc}");
+                if(spacers.Contains(i)) Console.WriteLine();
             }
             Console.WriteLine("─────────────────────────────────");
 

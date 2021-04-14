@@ -443,6 +443,16 @@ namespace GRUnlocker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] KRFull {
+            get {
+                object obj = ResourceManager.GetObject("KRFull", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] Levels {
             get {
                 object obj = ResourceManager.GetObject("Levels", resourceCulture);
@@ -466,6 +476,16 @@ namespace GRUnlocker.Properties {
         internal static byte[] Newgame_collectiables {
             get {
                 object obj = ResourceManager.GetObject("Newgame_collectiables", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] NGKR {
+            get {
+                object obj = ResourceManager.GetObject("NGKR", resourceCulture);
                 return ((byte[])(obj));
             }
         }

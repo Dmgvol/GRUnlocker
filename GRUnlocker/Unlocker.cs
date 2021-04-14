@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace GRUnlocker {
     public class Unlocker {
@@ -113,6 +115,33 @@ namespace GRUnlocker {
             return false;
         }
 
+        public bool UnlockLevelsKR() {
+            InputHandler.CheckSaveExists();
+            try {
+                var bytesData = File.ReadAllBytes(GetSavePath()).ToList();
+                var bytesPreset = Resources.KRFull.ToList();
+                // find anchors on both target and preset
+                int anchorStart_target = ByteUtils.Locate(bytesData.ToArray(), Encoding.UTF8.GetBytes("LastLevel"))[0];
+                int anchorEnd_target = ByteUtils.Locate(bytesData.ToArray(), Encoding.UTF8.GetBytes("UnlockedList"))[0];
+
+                int anchorStart_preset = ByteUtils.Locate(bytesPreset.ToArray(), Encoding.UTF8.GetBytes("LastLevel"))[0];
+                int anchorEnd_preset = ByteUtils.Locate(bytesPreset.ToArray(), Encoding.UTF8.GetBytes("UnlockedList"))[0];
+                // valid anchors?
+                if(anchorStart_target > 0 && anchorEnd_target > anchorStart_target && anchorStart_preset > 0 && anchorEnd_preset > anchorStart_preset) {
+                    bytesPreset = bytesPreset.Skip(anchorStart_preset).Take(anchorEnd_preset - anchorStart_preset).ToList();
+
+                    bytesData.RemoveRange(anchorStart_target, anchorEnd_target - anchorStart_target);
+                    bytesData.InsertRange(anchorStart_target, bytesPreset);
+
+                    File.WriteAllBytes(GetSavePath(), bytesData.ToArray());
+                    return true;
+                }
+            } catch(Exception) {
+                return false;
+            }
+            return false;
+        }
+
 
         public bool UnlockAll() {
             InputHandler.CheckSaveExists();
@@ -131,6 +160,29 @@ namespace GRUnlocker {
             try {
                 // replace with 100% save (all collectibles + classic & HC levels)
                 File.WriteAllBytes(GetSavePath(), Resources.hundoHC);
+            } catch(Exception) {
+                return false;
+            }
+            return true;
+        }
+
+        // KR Update
+        public bool UnlockAllKR() {
+            InputHandler.CheckSaveExists();
+            try {
+                // replace with 100% save (all collectibles, classic+HC levels, + 5 Killruns)
+                File.WriteAllBytes(GetSavePath(), Resources.KRFull);
+            } catch(Exception) {
+                return false;
+            }
+            return true;
+        }
+
+        public bool NewGameKR() {
+            InputHandler.CheckSaveExists();
+            try {
+                // replace save with NG save with KR done
+                File.WriteAllBytes(GetSavePath(), Resources.NGKR);
             } catch(Exception) {
                 return false;
             }
@@ -215,9 +267,34 @@ namespace GRUnlocker {
         }
 
         public bool Game_ToggleIntros() {
-            return ToggleFile(Path.Combine(Config.getInstance().GameDirectory, GameIntroDirectory, IntroFileName1)) &&
-               ToggleFile(Path.Combine(Config.getInstance().GameDirectory, GameIntroDirectory, IntroFileName2));
+            Console.WriteLine("File dialog will open, select Ghostrunner.exe to continue (press any key to begin)");
+            Console.ReadLine();
+            Thread t = new Thread((ThreadStart)(() => {
+                OpenFileDialog openFile = new OpenFileDialog();
+                openFile.Title = "Select Ghostrunner.exe";
+                openFile.DefaultExt = "Ghostrunner.exe";
+                openFile.Filter = "GR executable (*.exe)|*.exe";
+                openFile.CheckFileExists = true;
+                openFile.CheckPathExists = true;
+                openFile.Multiselect = false;
+
+                if(openFile.ShowDialog() == DialogResult.OK) {
+                    selectedPath = openFile.FileName;
+                }
+            }));
+
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
+            t.Join();
+            if(!string.IsNullOrWhiteSpace(selectedPath) && Directory.Exists(Path.GetDirectoryName(selectedPath))) {
+                return ToggleFile(Path.Combine(Path.GetDirectoryName(selectedPath), GameIntroDirectory, IntroFileName1)) &&
+                    ToggleFile(Path.Combine(Path.GetDirectoryName(selectedPath), GameIntroDirectory, IntroFileName2));
+            }
+            return false;
         }
+
+        string selectedPath = "";
+
 
         public bool ReplaceSelectedSword(int i) {
             InputHandler.CheckSaveExists();
@@ -256,16 +333,18 @@ namespace GRUnlocker {
             if(File.Exists(path)) {
                 // is on, toggle to off
                 File.Move(path, Path.Combine(Path.GetDirectoryName(path), (FileToggleTag + Path.GetFileName(path))));
+                Console.WriteLine($"Toggled OFF: {Path.GetFileName(path)}");
                 return true;
             }else if(File.Exists(Path.Combine(Path.GetDirectoryName(path), (FileToggleTag + Path.GetFileName(path))))){
                 // is off, toggle to on
                 File.Move(Path.Combine(Path.GetDirectoryName(path), (FileToggleTag + Path.GetFileName(path))), Path.Combine(Path.GetDirectoryName(path), Path.GetFileName(path)));
+                Console.WriteLine($"Toggled ON: {Path.GetFileName(path)}");
                 return true;
+            } else {
+                Console.WriteLine($"Failed to locate {Path.GetFileName(path)} (meaning it's already disabled)");
             }
             return false;
         }
-
-        public bool CreateConfig() => Config.getInstance().SaveManually();
 
         private byte[] GetResourceLevelData(int i) {
             switch(i) {

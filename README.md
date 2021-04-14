@@ -4,52 +4,36 @@
 # GRUnlocker
 Ghostrunner - Unlocks collectibles, levels, 100% save, and more!
 
-Known Bug: Reset Collectibles won't reset equipped sword, quick fix: run again, select 'Replace selected sword' and enter 0 for default.  (will be fixed in next patch)
 
 ### Available options
 - Unlock collectibles (levels untouched)
-- Unlock all levels (classic + hardcore support) (collectibles untouched)     ![](https://img.shields.io/badge/%20-%20New-brightgreen)   
-- Unlock everything (classic + hardcore support) (overwrites with 100% save)  ![](https://img.shields.io/badge/%20-%20New-brightgreen)
+- Unlock all levels (classic + hardcore levels)
+- Unlock all levels (classic, hardcore + 5 killruns) 
+- Unlock everything (classic + hardcore levels) 
+- Unlock everything (classic, hardcore + 5 killruns)  ![](https://img.shields.io/badge/%20-%20New-brightgreen)        
 - Unlock up to a specific level (1-16 with corresponding upgrades/skills)   
 - Unlock up to a specific hardcore level (1-16)                               ![](https://img.shields.io/badge/%20-%20New-brightgreen)
 - New game with collectibles unlocked (overwrites with a custom new-game save)
 - New game with custom sword (equipped sword yet nothing unlocked) 
+- New game with 5 killruns unlocked ![](https://img.shields.io/badge/%20-%20New-brightgreen)    
 - Replace selected sword (equip specific sword, even if not unlocked) 
 - Reset deaths & times  
 - Reset collectibles    
-- Toggle Intros (Splash + trailer when launching the game)
+- Toggle Game Intros (Select GR exe in file dialog) ![](https://img.shields.io/badge/%20-%20New-brightgreen)    
 
 
 **Note: When unlocking any hardcore levels it unlocks all classic levels with it.**
 
 ## Usage
 ### Option 1 ![](https://img.shields.io/badge/%20-%20New-brightgreen)
-The latest version introduces the 'save-file auto detect', GRUnlocker will attempt to find the default save file location.
+GRUnlocker will attempt to find the default save file location.
 Will display "Save Path: Auto" if successfully found the save file.
 
 #### Option 2 (Easiest)
 Copy GRUnlocker.exe to the save directory and run it from there.
 
-#### Option 3 
-Using the config file (can create through the GRUnlocker)
-make sure you paste the full paths accordingly, for example:
-```
-{
-  "SaveDirectory": "C:\Users\<username>\AppData\Local\Ghostrunner\Saved\SaveGames\<long-number>",
-  "GameDirectory": "C:\Program Files\Steam\steamapps\common\Ghostrunner"
-}
-```
-**Valid config file is required for 'Toggle Intros' Feature**
-
-#### Option 4 (Old)
-- Copy your ```.sav``` file to the same directory as the GRUnlocker.exe.
-- Run the program and choose one of the given options.
-- Copy back the updated ```.sav``` file to GR save folder.
-
 ### Starting arguments
 ```-displaypath``` > Will display the current save file path which it is working with.
-
-~~You can start the program with the digit of the choice in the args.~~ (Removed in latest version)
 
 ## GR save file location
 ### Windows (Steam/GOG)

@@ -4,8 +4,8 @@
 # GRUnlocker
 Ghostrunner - Unlocks collectibles, levels, 100% save, and more!
 
-### [!] Doesn't support the latest game versions, no ETA on updating the unlocker.
-Note: unlocking 100% saves _should_ still work.
+### [!] Supports up to KillRun Update(v0.34834.x), </br>For newer updates use: [UnlockerV2](./GRUnlocker_2/Unlocker2.md) (40019.x and higher)
+Note: unlocking 100% saves _should_ still work for all versions.
 
 
 
@@ -67,5 +67,4 @@ So if you want to get those achievements, you should do it by yourself.
 (Thanks to animayyo for testing and finding this out)
 
 ## Reporting
-~~If you encounter any type of issues/bugs or even suggestions, @ me on Discord.~~
-</br>The project is currently abandoned, I don't plan on updating it anytime soon.
+This version of the unlocker is no longer supported.
